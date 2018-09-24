@@ -1,3 +1,37 @@
-baseURL = "http://example.org/"
+baseURL = "https://fjahr.com/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "fjahr.com"
+paginate = 5
+DisqusShortname = "YOUR_SHORT_NAME_HERE"
+Copyright = "All rights reserved - 2018"
+canonifyurls = true
+theme = "casper"
+
+[params]
+  description = "Blog/Personal Site"
+  metadescription = "Used as 'description' meta tag for both home and index pages. If not set, 'description' will be used instead"
+  cover = "images/cover.jpg"
+  author = "Fabian Jahr"
+  authorlocation = "Berlin, Germany"
+  authorwebsite = "https://fjahr.com"
+  authorbio= "my bio"
+  logo = "images/logo.png"
+  googleAnalyticsUserID = "UA-79101-12"
+  # Optional RSS-Link, if not provided it defaults to the standard index.xml
+  RSSLink = "http://feeds.feedburner.com/..."
+  githubName = "fjahr"
+  twitterName = "fjahr"
+  linkedinName = "fjahr"
+  stackoverflowId = "1247580"
+  keybaseName = "fjahr"
+  # email = ""
+  # set true if you are not proud of using Hugo (true will hide the footer note "Proudly published with HUGO.....")
+  hideHUGOSupport = false
+
+  # Setting a value will load highlight.js and enable syntax highlighting using the style selected.
+  # See https://github.com/isagalaev/highlight.js/tree/master/src/styles for available styles
+  # A preview of above styles can be viewed at https://highlightjs.org/static/demo/
+  hjsStyle = "default"
+
+  [params.social]
+    twitter = "fjahr"

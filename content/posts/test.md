@@ -22,7 +22,7 @@ implications of it.
 
 One of the several issues that were solved by Segwit is the quadratic
 sighash problem. This seems to have been missed quite frequently by mainstream
-and even Bitcoin-specific media, since information on Segwit's
+and even Bitcoin-specific media since information on Segwit's
 reasoning seemed to focus mostly on its fix of malleability and
 the expansion of available block space. Since there are not many
 resources going into details on the topic, I will lay them out here and might follow
@@ -95,7 +95,7 @@ Q: Include comment about Tx not not propagated throught the network??
 
 Let's look at what is actually causing the quadratic time increase
 in the signature hashing algorithm before Segwit.
-We are talking about O(n^2), or O(n) * O(n), so what is the first n and
+We are talking about O(n<sup>2</sup>), or O(n) * O(n), so what is the first n and
 what is the second n?
 
 For each input in the transaction, we have to go through the following steps (and that
@@ -155,13 +155,13 @@ sighash problem was a vulnerability that had been known for a long time and
 would not have been too hard to exploit, given a significant amount of mining power.
 
 Removing the witness data from the transaction solved the root cause of the issue,
-lowering the complexity of the algorithm from O(n^2) to O(n), making it an
+lowering the complexity of the algorithm from O(n<sup>2</sup>) to O(n), making it an
 absolute non-issue, even in the event of future block increases.
 
 ### Further reading
-[BIP143: Transaction Signature Verification for Version 0 Witness Program](https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki)
-[Segwit benefits](https://bitcoincore.org/en/2016/01/26/segwit-benefits/)
-[Wallet implementation hints](https://bitcoincore.org/en/segwit_wallet_dev/)
+* [BIP143: Transaction Signature Verification for Version 0 Witness Program](https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki)
+* [Segwit benefits](https://bitcoincore.org/en/2016/01/26/segwit-benefits/)
+* [Wallet implementation hints](https://bitcoincore.org/en/segwit_wallet_dev/)
 
 \* Brain wallets are wallets where the mnemonic phrase for the wallet is designed to
 be easy to remember for a user. Examples of particularly weak ones are short

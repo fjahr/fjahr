@@ -3,17 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://fjahr.com/categories/</loc>
+    <loc>https://fjahr.com/posts/advanced-segwit-how-segwit-solved-the-quadratic-sighash-problem/</loc>
+    <lastmod>2019-06-21T19:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fjahr.com/posts/</loc>
+    <lastmod>2019-06-21T19:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://fjahr.com/tags/</loc>
+    <lastmod>2019-06-21T19:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fjahr.com/tags/bitcoin/</loc>
+    <lastmod>2019-06-21T19:00:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://fjahr.com/</loc>
+    <lastmod>2019-06-21T19:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fjahr.com/tags/segwit/</loc>
+    <lastmod>2019-06-21T19:00:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fjahr.com/categories/</loc>
     <priority>0</priority>
   </url>
   

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:image" content="/images/2014/Jul/titledotscale.png"/>
+    
+
+
+
+<meta name="twitter:title" content="Advanced Segwit - How Segwit solved the quadratic sighash problem"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@fjahr"/>
+
+
+
+  	<meta property="og:title" content="Advanced Segwit - How Segwit solved the quadratic sighash problem &middot; fjahr.com" />
+  	<meta property="og:site_name" content="fjahr.com" />
+  	<meta property="og:url" content="https://fjahr.com/posts/advanced-segwit-how-segwit-solved-the-quadratic-sighash-problem/" />
+
+    
+       <meta property="og:image" content="/images/2014/Jul/titledotscale.png"/>
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2019-06-21T19:00:00&#43;02:00" />
+
+    
+    <meta property="article:tag" content="segwit" />
+    
+    <meta property="article:tag" content="bitcoin" />
+    
+    
+
+    <title>Advanced Segwit - How Segwit solved the quadratic sighash problem &middot; fjahr.com</title>
+
+    
+    <meta name="description" content="Why write about Segwit in 2019? Segwit is one of the most discussed topics in the history of Bitcoin and rightfully so. The solution to a multitude of Bitcoin&amp;r" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://fjahr.com/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="https://fjahr.com/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="https://fjahr.com/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="https://fjahr.com/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+        <link href="http://feeds.feedburner.com/..." rel="alternate" type="application/rss+xml" title="fjahr.com" />
+    
+    <meta name="generator" content="Hugo 0.55.4" />
+
+    <link rel="canonical" href="https://fjahr.com/posts/advanced-segwit-how-segwit-solved-the-quadratic-sighash-problem/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url": "https://fjahr.com",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "my bio"
+        
+    },
+    "headline": "Advanced Segwit - How Segwit solved the quadratic sighash problem",
+    "name": "Advanced Segwit - How Segwit solved the quadratic sighash problem",
+    "wordCount":  1296 ,
+    "timeRequired": "PT7M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://fjahr.com/posts/advanced-segwit-how-segwit-solved-the-quadratic-sighash-problem/",
+    "datePublished": "2019-06-21T19:00Z",
+    "dateModified": "2019-06-21T19:00Z",
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://fjahr.com/images/2014/Jul/titledotscale.png",
+        "width": 3000,
+        "height": 1445
+    },
+    
+    "keywords": "segwit, bitcoin",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fjahr.com/posts/advanced-segwit-how-segwit-solved-the-quadratic-sighash-problem/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-79101-12', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened nav-current" role="presentation">
+            	<a href="https://fjahr.com/posts/advanced-segwit-how-segwit-solved-the-quadratic-sighash-problem/">Advanced Segwit - How Segwit solved the quadratic sighash problem</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://fjahr.com/about">About me</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://fjahr.com/">My Blog</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="http://feeds.feedburner.com/...">Subscribe</a> </div>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+  
+  <header class="main-header post-head" style="background-image: url(/images/2014/Jul/titledotscale.png)">
+  
+  <nav class="main-nav overlay clearfix">
+
+
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post posts">
+
+    <header class="post-header">
+        <h1 class="post-title">Advanced Segwit - How Segwit solved the quadratic sighash problem</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+          <span class="post-tag small"><a href="https://fjahr.com//tags/segwit/">#segwit</a></span>
+         
+          <span class="post-tag small"><a href="https://fjahr.com//tags/bitcoin/">#bitcoin</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<h2 id="why-write-about-segwit-in-2019">Why write about Segwit in 2019?</h2>
+
+<p>Segwit is one of the most discussed topics in the history of
+Bitcoin and rightfully so. The solution to a multitude of Bitcoin&rsquo;s
+problems was surprisingly effective. The activation, on the other hand,
+was a rollercoaster. Additionally, it is a very complex topic that
+requires thos interested to spend a significant amount of time with in order to
+get a complete understanding of all the details around mechanics and
+implications of it.</p>
+
+<p>One of the several issues that were solved by Segwit is the quadratic
+sighash problem. This seems to have been missed quite frequently by mainstream
+and even Bitcoin specific media, since information on Segwit&rsquo;s
+reasoning seemed to focus mostly on it&rsquo;s fix of malleability. Since there are not many
+resources going into details on the topic, I will lay them out here and might follow
+up with other articles on other frequently missed aspects of Segwit.</p>
+
+<h2 id="the-quadratic-sighash-problem">The quadratic sighash problem</h2>
+
+<p>Let&rsquo;s start by the locating the problem: the quadratic sighash problem
+arises while hashing the transaction data. Why do we need to hash it?
+We need the hash of the transaction data to create
+a signature that can verify that an output is spendable by the person
+who created the transaction, i.e. that person
+has control over the private key. The unspent outputs we are spending in
+a new transaction become inputs in that new transaction and each input needs
+to be signed to ensure that each old output is actually spendable.</p>
+
+<p>Now, the impact of doing this when creating a transaction is
+not very dramatic, since there is only one person (the creator of
+the transaction) doing it only once. But Bitcoin&rsquo;s security promise
+stems from the fact than any participant in the network can verify
+that all transactions in the history of the blockchain are correct.
+In fact every full node must verify any transaction that ends up in
+a Block that has been mined. So the impact of high computational
+complexity is much more serious in the validation of transactions.</p>
+
+<p>On the issues itself, as the name already implies, there is something quadratic going on
+while verifying a transaction (CHECKSIG etc.). Quadratic complexity
+in an algorithm is certainly not something anyone
+wants to see in performance critical code [2].</p>
+
+<p>This matters to the Bitcoin network in particular because we do want
+to allow as many people as possible to participate in the network,
+even if the computational power they can afford is rather low. Ignoring
+this could theoretically be exploited by miners who could have an interest
+to reduce the number of full nodes in the network by slowing them
+down to a degree that they can not stay up-to-date with the current tip
+of the blockchain, factually preventing them from being a participant in the
+consensus procress. It is currently possible to run a full node on
+a older generation Raspberry Pi for example but this could be jeopardized by such an attack.
+This does not require a hash power of anywhere near 51% of the network,
+a miner would only need to mine a malicious block with a high enough
+frequency that low-powered nodes can not catch up. An increased block
+size would, as was in heated discussion in 2017, would
+increase the chance of the happening as it would leave more space
+for malicious transactions in a single block.</p>
+
+<p>The issue became most apparent when f2pool mined a block containing
+a single transaction, which was taking up the whole block space of
+1MB. Rusty Russell wrote a blockpost on it the following day, naming
+it the mega transaction [3]. This was not a malicious transaction but rather
+sweeping small spam outputs from weak &lsquo;brain wallets&rsquo;*, as you can observe
+in a block explorer [5].</p>
+
+<p>The more significant part of this story is the time it took to validate
+this transaction: a reddit poster reported that it took 25 seconds
+to validate [4]. He also mentioned that an electrum server would take about
+4 minutes. The poster did not provide hardware specs but we can assume
+that blocks usually will take less than a second to validate on up-to-date
+hardware. This was clear evidence at the time, that the quadratic sighash
+problem was not just theoretical.</p>
+
+<p>TODO: Include comment about Tx not not propagated throught the network??</p>
+
+<p>Let&rsquo;s look at what is actually causing the quadratic time increase
+in the signature hashing algorithm before Segwit.
+We are talking about O(n^2), or O(n) * O(n), so what is the first n and
+what is the second n?</p>
+
+<p>For each input in the transaction, we have to go through the following steps (and that
+means here we also have our first n):
+1. We have to strip the other inputs from the transaction (and here we
+already have the second n).
+2. Replace the input script with the script of the output
+we are trying to spend.
+3. We double-SHA256 hash the resulting transaction construct.
+4. We check that the signature correctly signed the hash result.</p>
+
+<p>TODO: Add schema of old transaction including signature in input script</p>
+
+<h2 id="how-segwit-solved-it">How Segwit solved it</h2>
+
+<p>The breakthrough of Segwit lies in the name: Segwit stand for
+segregated witness and, if that sounds strange to you,
+I should add that witness stands for a proof that a statement is true
+in the field of cryptography.
+In the case of bitcoin transactions the statement is that whoever wants
+to spend an input is the rightful owner, i.e. has power over the private key. The
+proof is the signature that is attached to the input. In other words
+Segwit stand for the separatation of the signature. As you have read above, the cause
+for the quadratic sighash problem is, in fact, that we needed to remove
+signatures out of the input in order to perform our hashing operations
+for every input.</p>
+
+<p>In Segwit transactions the input script data is not included in the input
+part of the transaction. In it&rsquo;s place we have
+an empty field. Hence we do not need to to go through the tedious step
+of stripping that data out of the input field for every single output (the
+second n in our list above). This means that the number of operations for each
+input now only grows linearily as step 1 of the 4-step process descripted
+above simply does not exist. This reduces the computational complexity of
+signature verification to O(n).</p>
+
+<h2 id="other-proposed-solutions">Other proposed solutions</h2>
+
+<p>For the sake of completeness I want to mention that there were other proposals
+to deal with this issue. Most prominently the suggestion to limit the
+transaction size to minimize damage that could be done by larger transactions.
+Particularly Gavin Andreesen suggested a transaction size limit of 100,000 bytes [1].
+The proposal was however dismissed by large parts of the community as it
+did not solve the root cause of the issue and thus also left Bitcoin vultnerable
+to exploitations of the problem.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>It is still fascinating to me how Segwit solved so many problems at the same
+time. While malleability was probably the main motivation for it, the quadratic
+sighash problem was a vulnerability that had been known for a long time and
+would not have been to hard to exploit, given a significant amount of mining power.</p>
+
+<p>Removing the witness data from the transaction solved the root cause of the issue,
+lowering the complexity of the algorithm from O(n^2) to O(n), making it an
+absolute non-issue, even in the event of future block increases.</p>
+
+<ul>
+<li>Brain wallets are wallets where the mnemonic phrase for the wallet is designed to
+be easy to remember for a user. Examples of particularly weak ones are short
+and uncreative phrases, like &lsquo;password&rsquo; for example.</li>
+</ul>
+
+<p>[5] <a href="https://www.blockchain.com/btc/tx/bb41a757f405890fb0f5856228e23b715702d714d59bf2b1feb70d8b2b4e3e08">https://www.blockchain.com/btc/tx/bb41a757f405890fb0f5856228e23b715702d714d59bf2b1feb70d8b2b4e3e08</a>
+[3] <a href="https://web.archive.org/web/20190524044433/https://rusty.ozlabs.org/?p=522">https://web.archive.org/web/20190524044433/https://rusty.ozlabs.org/?p=522</a>
+<a href="https://bitcoin.stackexchange.com/questions/54264/which-kinds-of-transactions-show-quadratic-signature-hashing-scaling">https://bitcoin.stackexchange.com/questions/54264/which-kinds-of-transactions-show-quadratic-signature-hashing-scaling</a>
+<a href="https://bitcoincore.org/en/2016/01/26/segwit-benefits/">https://bitcoincore.org/en/2016/01/26/segwit-benefits/</a>
+[4] <a href="https://www.reddit.com/r/Bitcoin/comments/3cgft7/largest_transaction_ever_mined_999657_kb_consumes/csva1ei/?context=8&amp;depth=9">https://www.reddit.com/r/Bitcoin/comments/3cgft7/largest_transaction_ever_mined_999657_kb_consumes/csva1ei/?context=8&amp;depth=9</a>
+[1] <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009494.html">https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009494.html</a>
+[2] <a href="https://en.wikipedia.org/wiki/Big_O_notation#/media/File:Comparison_computational_complexity.svg">https://en.wikipedia.org/wiki/Big_O_notation#/media/File:Comparison_computational_complexity.svg</a></p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+
+<section class="author">
+  <h4><a href="https://fjahr.com/">Fabian Jahr</a></h4>
+  
+  <p>my bio</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Berlin, Germany</span>
+    <span class="author-link icon-link"><a href="https://fjahr.com">https://fjahr.com</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this posts</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Advanced%20Segwit%20-%20How%20Segwit%20solved%20the%20quadratic%20sighash%20problem&nbsp;-&nbsp;fjahr.com&amp;url=https%3a%2f%2ffjahr.com%2fposts%2fadvanced-segwit-how-segwit-solved-the-quadratic-sighash-problem%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ffjahr.com%2fposts%2fadvanced-segwit-how-segwit-solved-the-quadratic-sighash-problem%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2ffjahr.com%2fposts%2fadvanced-segwit-how-segwit-solved-the-quadratic-sighash-problem%2f&amp;description=Advanced%20Segwit%20-%20How%20Segwit%20solved%20the%20quadratic%20sighash%20problem"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2ffjahr.com%2fposts%2fadvanced-segwit-how-segwit-solved-the-quadratic-sighash-problem%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">fjahr.com</a> All rights reserved - 2018</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="https://fjahr.com/js/jquery.js"></script>
+    <script type="text/javascript" src="https://fjahr.com/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://fjahr.com/js/index.js"></script>
+    
+</body>
+</html>
+

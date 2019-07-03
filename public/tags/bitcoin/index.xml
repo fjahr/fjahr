@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>fjahr.com</title>
-    <link>https://fjahr.com/</link>
-    <description>Recent content on fjahr.com</description>
+    <title>bitcoin on fjahr.com</title>
+    <link>https://fjahr.com/tags/bitcoin/</link>
+    <description>Recent content in bitcoin on fjahr.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2018</copyright>
     <lastBuildDate>Fri, 21 Jun 2019 19:00:00 +0200</lastBuildDate>
     
-	<atom:link href="https://fjahr.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fjahr.com/tags/bitcoin/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

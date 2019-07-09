@@ -91,7 +91,7 @@ verification time of over 3 minutes on comparable hardware.
 
 Let's look at what is actually causing the quadratic time increase
 in the signature hashing algorithm before SegWit.
-We are talking about the computational complexity of `O(n<sup>2</sup>)`,
+We are talking about the computational complexity of O(n<sup>2</sup>),
 or `O(n) * O(n)`, where `n` is the number
 of inputs in the transaction. So what is the first `n` and
 what is the second `n`?

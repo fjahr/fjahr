@@ -1,8 +1,8 @@
 +++
 date = "2019-07-02T19:00:00+02:00"
 draft = false
-title = "Advanced Segwit - How Segwit solved the quadratic sighash problem"
-slug = "advanced-segwit-how-segwit-solved-the-quadratic-sighash-problem"
+title = "How SegWit solved the quadratic sighash problem"
+slug = "how-segwit-solved-the-quadratic-sighash-problem"
 tags = ["segwit","bitcoin", "draft"]
 image = "images/2014/Jul/titledotscale.png"
 comments = false
@@ -10,22 +10,22 @@ share = true        # set false to share buttons
 menu = "blog"           # set "main" to add this content to the main menu
 +++
 
-### Why write about Segwit in 2019?
+### Why write about SegWit in 2019?
 
-Segwit is one of the most discussed topics in the history of
+SegWit is one of the most discussed topics in the history of
 Bitcoin and rightfully so. The solution to a multitude of Bitcoin's
 problems was surprisingly effective. The activation, on the other hand,
 was a rollercoaster. Additionally, it is a very complex topic that
 requires you to spend a significant amount of time with it in order to
 get a complete understanding of its mechanics and implications.
 
-One of the several issues that were solved by Segwit is the quadratic
+One of the several issues that were solved by SegWit is the quadratic
 sighash problem. This seems to have been missed quite frequently by mainstream
-and even Bitcoin-specific media since reporting on Segwit's
+and even Bitcoin-specific media since reporting on SegWit's
 reasoning seemed to focus mostly on its fix of malleability and
 the expansion of available block space. Since there are not many
 resources going into detail on this topic, I try to lay it out here and might follow
-up with other articles on other frequently missed aspects of Segwit.
+up with other articles on other frequently missed aspects of SegWit.
 
 ### The quadratic sighash problem
 
@@ -73,7 +73,7 @@ While the issue had already been [reported in 2013](https://nvd.nist.gov/vuln/de
 it became most apparent when f2pool mined a block containing
 a single transaction, which was taking up the whole block space of
 1MB. Rusty Russell wrote a blog post on it the following day, naming
-it the [mega transaction](https://web.archive.org/web/20190524044433/https://rusty.ozlabs.org/?p=522).
+it the [mega transaction](https://rusty.ozlabs.org/?p=522).
 This was not a malicious transaction but rather
 sweeping small spam outputs from weak 'brain wallets'*, as you can observe
 in a [block explorer](https://www.blockchain.com/btc/tx/bb41a757f405890fb0f5856228e23b715702d714d59bf2b1feb70d8b2b4e3e08).
@@ -90,14 +90,14 @@ be designed to do even more damage, estimating a worst-case transaction
 verification time of over 3 minutes on comparable hardware.
 
 Let's look at what is actually causing the quadratic time increase
-in the signature hashing algorithm before Segwit.
-We are talking about the computational complexity of O(n<sup>2</sup>),
-or O(n) * O(n), where n is the number
-of inputs in the transaction. So what is the first n and
-what is the second n?
+in the signature hashing algorithm before SegWit.
+We are talking about the computational complexity of `O(n<sup>2</sup>)`,
+or `O(n) * O(n)`, where `n` is the number
+of inputs in the transaction. So what is the first `n` and
+what is the second `n`?
 
-For each input in the transaction, we have to go through the following steps (and that
-means here we also have our first n):
+For each input in the transaction, we have to go through the following steps as described in [Rusty's post](https://rusty.ozlabs.org/?p=522) (and that
+means here we also have our first `n`):
 
 1. We have to strip the other input scripts from the transaction. Note that
 the rest of the input data (TxId of the previous output
@@ -107,31 +107,47 @@ we are trying to spend.
 3. We double-SHA256 hash the resulting transaction construct.
 4. We check that the signature correctly signed the hash result.
 
-The second n is not so easy to spot: As there still remains data within
+The second `n` is admittedly not so easy to spot: As there still remains data within
 the serialized transaction pre-image for every input, the size of data that needs to be
-hashed still grows proportionally to the number of inputs. This is
-our second n.
+hashed still grows proportionally to the number of inputs. As mentioned before,
+this data is the TxId of the previous output and the index of the output we want
+to spend. This is our second `n`.
 
-See [this graphic](https://en.bitcoin.it/w/images/en/7/70/Bitcoin_OpCheckSig_InDetail.png)
+To make this more concrete, let's consider a transaction with the minimal
+number of inputs that make this issue occur: exactly 2 inputs. We loop over
+both of these inputs and for each of them
+we need to hash both the previous output script of the input we are currently looking at
+and the TxId and the index of the other output. These are two different sets of data. This
+means we have performed `2 * 2 = 4` hashing operations.
+See also the following graphic were
+I try to make this a little more visually intuitive if you are not thinking
+about computational complexity on a regular basis.
+(If you are not familiar with computational complexity and Big O notation I
+recommend reading up on the [subject](https://en.wikipedia.org/wiki/Big_O_notation) in general if you are interested in
+getting a deeper understanding.)
+
+![Computational complexity in transaction hashing before segwit](/computational_complexity_pre_segwit.jpg)
+
+Also see [this graphic](https://en.bitcoin.it/w/images/en/7/70/Bitcoin_OpCheckSig_InDetail.png)
 for a much more detailed view of the serialization process.
 
 It also needs to be noted that the transaction needs to be signed with the
 SIGHASH_ALL flag, so all the signatures are actually checked.
 
-### How Segwit solves the problem
+### How SegWit solves the problem
 
-The breakthrough of Segwit lies in the name: Segwit stands for
+The breakthrough of SegWit lies in the name: SegWit stands for
 segregated witness and, if that sounds strange to you,
 I should add that witness stands for a proof that a statement is true
 in the field of cryptography.
 In the case of bitcoin transactions, the statement is that whoever wants
 to spend an input is the rightful owner, i.e. has power over the private key. The
 proof is the signature that is attached to the input. In other words,
-Segwit stands for the separation of the input signature. As you have read above, the cause
+SegWit stands for the separation of the input signature. As you have read above, the cause
 for the quadratic sighash problem is, in fact, that the data we need to
 hash for every input grows linearly with the number of inputs.
 
-In Segwit transactions, the script signatures of all the inputs are not
+In SegWit transactions, the script signatures of all the inputs are not
 included in the serialization format that we need for the transaction hash. Instead,
 this data is moved to the end of the transaction.
 So, we do not need to hash the transaction again and again with all the different
@@ -158,7 +174,7 @@ to exploitations of the problem.
 
 ### Conclusion
 
-It is still fascinating to me how Segwit solved so many problems at the same
+It is still fascinating to me how SegWit solved so many problems at the same
 time. While malleability was probably the main motivation for it, the quadratic
 sighash problem was a vulnerability that had been known for a long time and
 would not have been too hard to exploit, given a significant amount of mining power.

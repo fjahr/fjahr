@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+$.fn.arctic_scroll	public/js/index.js	/^    $.fn.arctic_scroll = function (options) {$/;"	f
+$.fn.arctic_scroll	themes/casper/static/js/index.js	/^    $.fn.arctic_scroll = function (options) {$/;"	f
+$.fn.arctic_scroll.defaults.elem	public/js/index.js	/^            elem: $(this),$/;"	p
+$.fn.arctic_scroll.defaults.elem	themes/casper/static/js/index.js	/^            elem: $(this),$/;"	p
+$.fn.fitVids	public/js/jquery.fitvids.js	/^  $.fn.fitVids = function( options ) {$/;"	f
+$.fn.fitVids	themes/casper/static/js/jquery.fitvids.js	/^  $.fn.fitVids = function( options ) {$/;"	f
+$.fn.fitVids.settings.customSelector	public/js/jquery.fitvids.js	/^      customSelector: null$/;"	p
+$.fn.fitVids.settings.customSelector	themes/casper/static/js/jquery.fitvids.js	/^      customSelector: null$/;"	p
+$document	public/js/index.js	/^    var $document = $(document);$/;"	v
+$document	themes/casper/static/js/index.js	/^    var $document = $(document);$/;"	v
+copyToClipboard	public/fonts/Genericons/example.html	/^function copyToClipboard ( text, copyMode ) {$/;"	f
+copyToClipboard	themes/casper/static/fonts/Genericons/example.html	/^function copyToClipboard ( text, copyMode ) {$/;"	f
+displayGlyph	public/fonts/Genericons/example.html	/^function displayGlyph( attr, cssclass ) {$/;"	f
+displayGlyph	themes/casper/static/fonts/Genericons/example.html	/^function displayGlyph( attr, cssclass ) {$/;"	f
+pickRandomIcon	public/fonts/Genericons/example.html	/^function pickRandomIcon() {$/;"	f
+pickRandomIcon	themes/casper/static/fonts/Genericons/example.html	/^function pickRandomIcon() {$/;"	f
+sortUnicode	public/fonts/Genericons/example.html	/^function sortUnicode ( a, b ) {$/;"	f
+sortUnicode	themes/casper/static/fonts/Genericons/example.html	/^function sortUnicode ( a, b ) {$/;"	f
+toggleUACs	public/fonts/Genericons/example.html	/^function toggleUACs() {$/;"	f
+toggleUACs	themes/casper/static/fonts/Genericons/example.html	/^function toggleUACs() {$/;"	f

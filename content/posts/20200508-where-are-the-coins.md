@@ -6,7 +6,7 @@ slug = "where-are-the-coins"
 tags = ["bitcoin", "coin supply", "gettxoutsetinfo"]
 image = "images/2014/Jul/titledotscale.png"
 comments = false
-share = true        # set false to share buttons
+share = false        # set false to share buttons
 menu = "blog"           # set "main" to add this content to the main menu
 +++
 
@@ -46,7 +46,7 @@ this is to save disc space.
 If these unspendable outputs would not be removed they could bloat the
 UTXO set and take up disc space on every full node, forever.
 
-## The UTXO set
+### The UTXO set
 
 I want to briefly recap what the
 UTXO set (unspent transaction output set) is and why it exists to make
@@ -81,7 +81,7 @@ the answer, [I only found some high-level ideas](https://bitcointalk.org/index.p
 but not a detailed analysis
 of this. That's what I am trying to provide here.
 
-## The amount of missing coins
+### The amount of missing coins
 
 The Bitcoin supply schedule started with 50 BTC for every new block,
 with the reward halving every `210,000` blocks. That means we should currently
@@ -102,9 +102,10 @@ So we are missing exactly:
 18362987.5 - 18362804.82079165 = 182.67920835 BTC
 ```
 
-## Finally, where did these coins go?
+### Finally, where did these coins go?
 
-### Genesis Block
+
+#### Genesis Block
 
 We just added it in with the +1 in the last paragraph
 and now we are taking it out
@@ -128,7 +129,7 @@ difficult. But that is speculation.
 ```
 Status: **132.67920835 BTC still missing!**
 
-### BIP 30
+#### BIP 30
 
 [BIP 30](https://github.com/bitcoin/bips/blob/master/bip-0030.mediawiki)
 describes a bug from the early days of Bitcoin. It turned out
@@ -187,7 +188,7 @@ impossible to introduce a duplicate coinbase transaction
 by accident.
 
 
-### OP_RETURN
+#### OP_RETURN
 
 For somewhat more experienced bitcoin users this opcode might come to mind
 first when they think of unspendable or 'burned' outputs.
@@ -207,7 +208,7 @@ most of it today.
 Status: **28.95502904 BTC still missing!**
 
 
-### Script too large
+#### Script too large
 
 Another reason for an output to be [marked as not spendable](https://github.com/bitcoin/bitcoin/blob/b549cb1bd2cc4c6d7daeccdd06915bec590e90ca/src/script/script.h#L536)
 in the
@@ -222,7 +223,7 @@ UTXO set specifically for this reason.
 Status: **28.95502904 BTC still missing!**
 
 
-### Unclaimed Miner Rewards
+#### Unclaimed Miner Rewards
 
 This may sound weird at first, but there is a possibility that miners
 don't claim their full block reward in a block they mined. The mining
@@ -261,7 +262,7 @@ way, which is `734087 sats` more than Pieter accounted for.
 Status: **0 BTC still missing!**
 
 
-### Other unspendable outputs
+#### Other unspendable outputs
 
 These are not all the outputs that are known to be unspendable.
 There are several more types of outputs that are impossible to
@@ -271,7 +272,7 @@ set.
 An update on the numbers of these other unspendable outputs would certainly be
 interesting as well.
 
-## Final thoughts
+### Final thoughts
 
 ![Missing coins distribution](/gettxoutsetinfo_missing_coins_distribution.svg)
 

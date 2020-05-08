@@ -6,11 +6,9 @@ slug = "how-segwit-solved-the-quadratic-sighash-problem"
 tags = ["segwit","bitcoin"]
 image = "images/2014/Jul/titledotscale.png"
 comments = false
-share = true        # set false to share buttons
+share = false        # set false to share buttons
 menu = "blog"           # set "main" to add this content to the main menu
 +++
-
-### Why write about SegWit in 2019?
 
 SegWit is one of the most discussed topics in the history of
 Bitcoin and rightfully so. The solution to a multitude of Bitcoin's

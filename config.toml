@@ -13,7 +13,7 @@ theme = "casper"
   author = "Fabian Jahr"
   authorlocation = "Berlin, Germany"
   authorwebsite = "https://fjahr.com"
-  authorbio= "my bio"
+  authorbio= "Personal blog"
   # logo = "images/logo.png"
   googleAnalyticsUserID = "UA-79101-12"
   # Optional RSS-Link, if not provided it defaults to the standard index.xml

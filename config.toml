@@ -7,7 +7,7 @@ canonifyurls = true
 theme = "casper"
 
 [params]
-  description = "Blog/Personal Site"
+  description = "B45A B6D2 0861 AC21 D276 B826 F13D 1E9D 8907 98CD"
   metadescription = "Used as 'description' meta tag for both home and index pages. If not set, 'description' will be used instead"
   cover = "images/cover.jpg"
   author = "Fabian Jahr"

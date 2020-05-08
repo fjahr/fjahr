@@ -10,6 +10,12 @@ share = false        # set false to share buttons
 menu = "blog"           # set "main" to add this content to the main menu
 +++
 
+EDIT: An earlier version of this post linked to a BitcoinTalk
+post that speculated on the cause of BIP30 being the introduction
+of LevelDB. Pieter Wuille kindly informed me that LevelDB was
+[introduced after BIP30 occured](https://github.com/bitcoin/bitcoin/pull/1677)
+, which means that post was definitely false.
+
 The third Bitcoin halving is coming up quickly as I write this.
 I thought this would be a great time to write down what I
 learned about the amount of BTC in the UTXO set. Everyone
@@ -160,12 +166,7 @@ The reason why this is a problem may not be completely obvious but the
 term 'transaction ID' gives a hint. TXIDs also serve as the identifier for
 coins that are stored in the UTXO set. In this case, an
 existing output of the last coinbase got overridden by the next tx with
-the same TXID. I previously mentioned that this was an oversight (pretty much
-all software bugs are, I guess) but it is not completely clear to me by whom.
-User piotr_n suggested in [his Bitcointalk post from 2014](https://bitcointalk.org/index.php?topic=216938.msg7182670#msg7182670)
-that this bug was not introduced by
-Satoshi and instead appeared after the switch from BerkeleyDB to LevelDB. I
-have not fully verified this claim but it seems plausible.
+the same TXID.
 
 As a fix, transactions with TXIDs that are already present in the UTXO set, i.e. that have
 existed before and still have unspent outputs, [are declared invalid](https://github.com/bitcoin/bitcoin/blob/b549cb1bd2cc4c6d7daeccdd06915bec590e90ca/src/validation.cpp#L2084).

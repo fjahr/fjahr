@@ -75,7 +75,7 @@ the better name to match today's widely used terminology.
 But as we already established earlier, there seems to be
 some kind of a 'leak' since it reflects fewer bitcoins than expected.
 
-So many many coins are lost exactly and where are they?
+So how many coins are lost exactly and where are they?
 During my initial search for
 the answer, [I only found some high-level ideas](https://bitcointalk.org/index.php?topic=5220871.0)
 but not a detailed analysis

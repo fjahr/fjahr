@@ -25,6 +25,7 @@ theme = "casper"
   keybaseName = "fjahr"
   # email = ""
   hideHUGOSupport = true
+  css = ["css/btcpay.css"]
 
   # Setting a value will load highlight.js and enable syntax highlighting using the style selected.
   # See https://github.com/isagalaev/highlight.js/tree/master/src/styles for available styles
@@ -36,12 +37,12 @@ theme = "casper"
 
 [[menu.main]]
   name = "My Blog"
-  weight = -120
+  weight = -100
   identifier = "blog"
   url = "/"
 
-[[menu.main]]
-  name = "About me"
-  weight = -110
-  identifier = "about"
-  url = "/about"
+# [[menu.main]]
+#   name = "Donate"
+#   weight = -110
+#   identifier = "donate"
+#   url = "/donate"
